@@ -1,0 +1,9 @@
+{% load cms_tags %}
+
+{% if instance.container_type == 10 %}
+    {% for plugin in instance.child_plugin_instances %}
+        <div class="col-md-3 col-sm-6">
+            {% render_plugin plugin %}
+        </div>
+    {% endfor %}
+{% endif %}

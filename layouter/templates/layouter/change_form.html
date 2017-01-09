@@ -1,0 +1,24 @@
+{% extends 'admin/cms/extensions/change_form.html' %}
+{% load staticfiles %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'layouter/css/layouter.css' %}">
+{% endblock %}
+{% block admin_change_form_document_ready %}
+    {{ block.super }}
+    <script>
+    var $ = django.jQuery;
+    var container =$('#id_container_type');
+    var $radios = container.find('input:radio');
+    // Check currently selected value
+    var $checkedRadio = container.find('input:checked');
+    $($checkedRadio).parents('li').addClass('checked');
+
+    // Listen on radio changes
+    $radios.change(function () {
+        $radios.parents('li').removeClass('checked');
+        $(this).parents('li').addClass('checked');
+    });
+    </script>
+{% endblock %}
