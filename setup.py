@@ -26,7 +26,7 @@ REQUIREMENTS = [
 
 setup(
     name='djangocms-layouter',
-    packages=['djangocms-layouter'],
+    packages=['layouter'],
     version=__version__,
     description='Grid system for Django-CMS users which aims for ease of use.',
     author='Robert Stein',
