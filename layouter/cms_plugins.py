@@ -26,8 +26,7 @@ class ContainerCMSPlugin(CMSPluginBase):
     )
 
     def render(self, context, instance, placeholder):
-        if instance.margin:
-            context['width'] = 12 - 2 * instance.margin
+        context['width'] = 12 - 2 * instance.margin
         return super(ContainerCMSPlugin, self).render(context, instance, placeholder)
 
 plugin_pool.register_plugin(ContainerCMSPlugin)
