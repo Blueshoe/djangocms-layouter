@@ -60,7 +60,7 @@ class ContainerPlugin(CMSPlugin):
 
     container_type = models.IntegerField(choices=CONTAINER_TYPES, null=False, blank=False, default=TYPE_COLUMNS[0])
 
-    margin = models.IntegerField(choices=MARGIN_TYPES, null=True, blank=True, default=MARGIN_TYPES[0],
+    margin = models.IntegerField(choices=MARGIN_TYPES, null=False, blank=False, default=MARGIN_TYPES[0][0],
                                  help_text=_('How much margin is needed on the left and right side?'))
 
     css_classes = models.CharField(max_length=512, blank=True, null=True)
