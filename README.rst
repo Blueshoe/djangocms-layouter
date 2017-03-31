@@ -49,7 +49,7 @@ for authors and editors. Not only for Django-CMS, this plugin needs it to, for s
 
 **Advanced Mode** - Not completely sure what it should look like. The current implementation is very limited
 when it comes to adapting columns for different screen sizes or using more than 4 columns. It currently is completely
-defined by this plugin, which can be good, but does not have to be. Some users want to plugin to take care, others want
+defined by this plugin, which can be good, but does not have to be. Some users want the plugin to take care, others want
 to control the behaviour themselves.
 
 **Tests** - There should be something like casper.js tests, maybe there is something better.
