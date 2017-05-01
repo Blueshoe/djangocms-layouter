@@ -2,8 +2,10 @@ import os
 from distutils.core import setup
 from layouter import __version__
 
+
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
 
 CLASSIFIERS = [
     'Development Status :: 4 - Beta',
@@ -33,8 +35,8 @@ setup(
     packages=['layouter'],
     version=__version__,
     description='Grid system for Django-CMS users which aims for ease of use.',
-    long_description = read('README.rst'),
-    license = read('LICENSE.txt'),
+    long_description=read('README.rst'),
+    license=read('LICENSE.txt'),
     author='Robert Stein',
     author_email='robert@blueshoe.de',
     url='https://github.com/Blueshoe/djangocms-layouter',

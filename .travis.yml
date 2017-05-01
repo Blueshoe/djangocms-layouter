@@ -1,0 +1,12 @@
+language: python
+sudo: false
+
+branches: master  # This way push builds will only run on master branch. Does not affect PR builds.
+
+cache: pip
+
+install:
+  pip install flake8
+
+script:
+  flake8 .
