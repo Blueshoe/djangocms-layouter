@@ -2,14 +2,13 @@
 Django-CMS Layouter
 ===================
 
+.. image:: https://travis-ci.org/Blueshoe/djangocms-layouter.svg?branch=master
+    :target: https://travis-ci.org/Blueshoe/djangocms-layouter
+    :alt: Code analysis status
 
 **Django-CMS Layouter** is a plugin for **Django CMS** which aims to provide a grid system for authors and editors
 with a high ease of use and comprehensibility. It is leveraging `Bootstrap 3 <http://getbootstrap.com/>`_ as it
 is a very popular framework to create responsive websites.
-
-.. image:: https://travis-ci.org/Blueshoe/djangocms-layouter.svg?branch=master
-    :target: https://travis-ci.org/Blueshoe/djangocms-layouter
-    :alt: Code analysis status
 
 .. image:: https://raw.githubusercontent.com/Blueshoe/djangocms-layouter/master/layouter.gif
 
