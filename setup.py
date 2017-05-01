@@ -42,4 +42,6 @@ setup(
     install_requires=REQUIREMENTS,
     keywords=['django', 'Django CMS', 'grid', 'bootstrap', 'website', 'CMS', 'Blueshoe'],
     classifiers=CLASSIFIERS,
+    include_package_data=True,
+    zip_safe=False,
 )
