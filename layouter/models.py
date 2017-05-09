@@ -71,6 +71,10 @@ class ContainerPlugin(CMSPlugin):
                                                    'This setting is not  supported by Internet Explorer 9 and below.'),
                                        null=False, blank=False, default=False)
 
+    disable_on_mobile = models.BooleanField(_('Disable on mobile'), null=False, blank=False, default=False)
+    disable_on_tablet = models.BooleanField(_('Disable on tablet'), null=False, blank=False, default=False)
+    disable_on_desktop = models.BooleanField(_('Disable on desktop'), null=False, blank=False, default=False)
+
     css_classes = models.CharField(max_length=512, blank=True, null=True)
 
     @property

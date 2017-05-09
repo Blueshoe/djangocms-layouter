@@ -27,6 +27,10 @@ class ContainerCMSPlugin(CMSPluginBase):
         (None, {
             'fields': ('container_type', 'margin', 'equal_height')
         }),
+        (None, {
+           'description': _('Disable row on'),
+           'fields': ('disable_on_mobile', 'disable_on_tablet', 'disable_on_desktop')
+        }),
         (_('Advanced'), {
             'classes': ('collapse',),
             'fields': ('css_classes',)
