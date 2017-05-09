@@ -37,6 +37,7 @@
   text-align: center;
   border: 0;
   padding-bottom: 15px;
+  user-select: none;
 }
 #id_container_type li span {
   padding-bottom: 7px;
