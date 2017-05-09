@@ -2,7 +2,10 @@
 {% load staticfiles %}
 <div class="row layouterRow--outer">
     <div class="col-md-offset-{{ instance.margin }} col-md-{{ width }}">
-        <div class="row layouterRow--inner {% if request.session.layouter_grid %}show-grid{% endif %} {{ instance.css_classes }}">
+        <div class="row layouterRow--inner
+        {% if request.session.layouter_grid %}show-grid{% endif %}
+        {% if instance.equal_height %}layouterRow--equalHeight{% endif %}
+        {{ instance.css_classes }}">
             {% include 'layouter/partials/one_col.html' %}
             {% include 'layouter/partials/two_cols.html' %}
             {% include 'layouter/partials/three_cols.html' %}
