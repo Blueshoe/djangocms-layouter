@@ -27,6 +27,9 @@ class ContainerCMSPlugin(CMSPluginBase):
         (None, {
             'fields': ('container_type', 'margin', 'equal_height')
         }),
+        (_('Background'), {
+            'fields': ('background_image','background_image_parallax')
+        }),
         (_('Advanced'), {
             'classes': ('collapse',),
             'fields': ('css_classes',)
