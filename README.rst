@@ -11,7 +11,7 @@ with a high ease of use and comprehensibility. It is leveraging `Bootstrap 3 <ht
 is a very popular framework to create responsive websites.
 
 .. image:: https://raw.githubusercontent.com/Blueshoe/djangocms-layouter/master/layouter.gif
-
+  
 
 Documentation
 =============
