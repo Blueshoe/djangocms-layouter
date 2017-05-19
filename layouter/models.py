@@ -62,7 +62,12 @@ class ContainerPlugin(CMSPlugin):
 
     margin = models.IntegerField(choices=MARGIN_TYPES, null=False, blank=False, default=MARGIN_TYPES[0][0],
                                  help_text=_('How much margin is needed on the left and right side?'))
-    equal_height = models.BooleanField(_('Make height of the columns equal'), null=False, blank=False, default=False)
+
+    # To achieve same height columns we use the CSS3 flex box grid. For more information about it have a look at
+    # http://caniuse.com/flexbox
+    equal_height = models.BooleanField(_('Align height of all columns in this row. Please note: This setting is not '
+                                         'supported by Internet Explorer 9 and below.'), null=False, blank=False,
+                                       default=False)
 
     css_classes = models.CharField(max_length=512, blank=True, null=True)
 
