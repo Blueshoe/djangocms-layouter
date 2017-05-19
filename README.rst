@@ -22,7 +22,7 @@ Please feel free to contribute and help us to improve **Django-CMS Layouter**.
 Installation and Configuration
 ------------------------------
 
-**Django-CMS Layouter** supports Django-CMS>=3.4. It may way with any older version.
+**Django-CMS Layouter** supports Django-CMS>=3.4. It may work with any older version.
 
 * Install via pip: ``pip install djangocms-layouter``.
 * Add ``layouter`` to ``INSTALLED_APPS``.
