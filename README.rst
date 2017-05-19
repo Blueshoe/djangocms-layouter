@@ -26,6 +26,7 @@ Installation and Configuration
 
 * Install via pip: ``pip install djangocms-layouter``.
 * Add ``layouter`` to ``INSTALLED_APPS``.
+* Add ``url(r'^layouter/', include('layouter.urls', namespace='layouter'), )`` to your url config
 * Run migrations: ``python manage.py migrate layouter``.
 * Done.
 
