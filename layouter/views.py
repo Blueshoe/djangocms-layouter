@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from django.http.response import JsonResponse
 from django.views.generic.base import View
 
