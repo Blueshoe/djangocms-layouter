@@ -36,7 +36,7 @@ These are the core features of **Django-CMS Layouter**:
 * Flat tree in structure mode
 * Automatic arrangement of columns, for different screen sizes
 * Warning, due to too many plugins, in structure mode
-* Optional equal height for columns
+* Optional equal height for columns (uses CSS3 flexbox)
 * Toggle grid - show and hide grid in content mode
 
 ToDo's
