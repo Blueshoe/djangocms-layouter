@@ -30,6 +30,9 @@ Installation and Configuration
 * Run migrations: ``python manage.py migrate layouter``.
 * Done.
 
+Please note: Migrations are generated each release. If you checkout the current state of development
+migrations might be missing.
+
 Features
 --------
 
@@ -38,8 +41,8 @@ These are the core features of **Django-CMS Layouter**:
 * Flat tree in structure mode
 * Automatic arrangement of columns, for different screen sizes
 * Warning, due to too many plugins, in structure mode
+* Optional equal height for columns (uses CSS3 flexbox)
 * Toggle grid - show and hide grid in content mode
-
 
 ToDo's
 ------
