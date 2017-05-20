@@ -28,6 +28,9 @@ Installation and Configuration
 * Run migrations: ``python manage.py migrate layouter``.
 * Done.
 
+Please note: Migrations are generated each release. If you checkout the current state of development
+migrations might be missing.
+
 Features
 --------
 
