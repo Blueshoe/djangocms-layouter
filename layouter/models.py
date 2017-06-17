@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from django.db import models
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 from cms.models.pluginmodel import CMSPlugin
-from django.utils.encoding import python_2_unicode_compatible
+from django.utils.encoding import python_2_unicode_compatible, force_text
 
 
 @python_2_unicode_compatible
@@ -74,4 +75,4 @@ class ContainerPlugin(CMSPlugin):
         if self.num_children() > self.max_children:
             name = '<span style="color:red">Warning, too many tiles!</span> {}'.format(name)
 
-        return mark_safe(unicode(name))
+        return mark_safe(force_text(name))
