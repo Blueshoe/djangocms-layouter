@@ -18,7 +18,7 @@ class ContainerCMSPlugin(CMSPluginBase):
 
     fieldsets = (
         (None, {
-            'fields': ('container_type', 'margin')
+            'fields': ('container_type', 'margin', 'equal_height')
         }),
         (_('Advanced'), {
             'classes': ('collapse',),
