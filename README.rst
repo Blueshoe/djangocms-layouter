@@ -12,8 +12,6 @@ is a very popular framework to create responsive websites.
 
 .. image:: https://raw.githubusercontent.com/Blueshoe/djangocms-layouter/master/layouter.gif
 
-**Attention** - This plugin is not Python3 compatible yet.
-
 Documentation
 =============
 
@@ -45,8 +43,6 @@ ToDo's
 ------
 
 No software is perfect, everyone's code sucks. Feel free to suggest, criticize and/or contribute.
-
-**Python 3 compatibility** - Add Python 3 support. WIP
 
 **Dynamic Warning Updates** - Dragging and Dropping in the structure view does not update the warnings within the
 plugin.
