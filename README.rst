@@ -50,6 +50,9 @@ No software is perfect, everyone's code sucks. Feel free to suggest, criticize a
 **Dynamic Warning Updates** - Dragging and Dropping in the structure view does not update the warnings within the
 plugin.
 
+**Add support for Divio Cloud** - Adding support for the Divio Cloud, so that the Layouter is installable via
+Divio Cloud control panel.
+
 **Author / Editor Documentation** - IMHO this is one of the things Django-CMS lacks. We need more and better resources
 for authors and editors. Not only for Django-CMS, this plugin needs it to, for sure.
 
