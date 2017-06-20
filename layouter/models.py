@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
@@ -61,13 +62,24 @@ class ContainerPlugin(CMSPlugin):
         (4, FOUR_COL_MARGIN)
     )
 
+    NO_PARALLAX = 0
+    CSS_PARALLAX = 1
+    TRUE_PARALLAX = 2
+    BACKGROUND_IMAGE_PARALLAX_CHOICES = (
+        (NO_PARALLAX, _('No Effect')),
+        (CSS_PARALLAX, _('CSS Parallax')),
+        (TRUE_PARALLAX, _('True Parallax')),
+    )
+
     container_type = models.IntegerField(choices=CONTAINER_TYPES, null=False, blank=False, default=TYPE_COLUMNS[0])
 
     margin = models.IntegerField(choices=MARGIN_TYPES, null=False, blank=False, default=MARGIN_TYPES[0][0],
                                  help_text=_('How much margin is needed on the left and right side?'))
 
     background_image = FilerImageField(verbose_name=_('Background image'), null=True, blank=True)
-    background_image_parallax = models.BooleanField(_('Parallax Effect'), default=False)
+
+    background_image_parallax = models.IntegerField(_('Parallax Effect'), null=False, blank=False,
+                                                    choices=BACKGROUND_IMAGE_PARALLAX_CHOICES, default=NO_PARALLAX)
 
     background_image_width = models.IntegerField(_('Background image width'), null=True, blank=True, default=1920)
     background_image_height = models.IntegerField(_('Background image width'), null=True, blank=True, default=1080,
@@ -88,12 +100,12 @@ class ContainerPlugin(CMSPlugin):
     def max_children(self):
         return len(self.TYPE_COLUMNS[self.container_type])
 
-    def get_resized_background_image_url(self):
+    def get_resized_background_image(self):
         """
-        :return: The url to the image which is thumbnailed to the specified size via easy-thumbnails
+        :return: The image which is thumbnailed to the specified size via easy-thumbnails
         """
         if self.background_image is None:
-            return ''
+            return None
 
         thumbnail_options = {
             'crop': False,
@@ -103,9 +115,16 @@ class ContainerPlugin(CMSPlugin):
             thumbnailer = get_thumbnailer(self.background_image)
             image = thumbnailer.get_thumbnail(thumbnail_options)
         except:
-            return ''
+            return None
         else:
-            return image.url
+            return image
+
+    def clean(self):
+        super(ContainerPlugin, self).clean()
+        if self.background_image_parallax is not self.NO_PARALLAX and not self.background_image:
+            raise ValidationError(
+                _('You need to specify a background image in order to use a parallax effect.')
+            )
 
     def __str__(self):
         name = self.CONTAINER_TYPES[self.container_type][1]
