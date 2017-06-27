@@ -1,12 +1,31 @@
 language: python
 sudo: false
 
-branches: master  # This way push builds will only run on master branch. Does not affect PR builds.
+# ToDo: Remove Comment, it's just for testing
+#branches: master  # This way push builds will only run on master branch. Does not affect PR builds.
 
 cache: pip
 
+env:
+  - TOX_ENV=flake8
+  - TOX_ENV=py27-latest
+  - TOX_ENV=py34-latest
+  # Django 1.8
+  - TOX_ENV=py27-dj18-cms34
+  - TOX_ENV=py27-dj18-cms33
+  - TOX_ENV=py34-dj18-cms34
+  - TOX_ENV=py34-dj18-cms33
+  # Django 1.9
+  - TOX_ENV=py27-dj19-cms34
+  - TOX_ENV=py27-dj19-cms33
+  - TOX_ENV=py34-dj19-cms34
+  - TOX_ENV=py34-dj19-cms33
+
 install:
-  pip install flake8
+  - pip install tox coverage
 
 script:
-  flake8 .
+  - tox -e $TOX_ENV
+
+#after_success:
+#  - bash <(curl -s https://codecov.io/bash)
