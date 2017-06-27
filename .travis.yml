@@ -26,6 +26,8 @@ install:
   - pip install tox coverage
 
 script:
+  - python manage.py makemigrations layouter
+  - python manage.py migrate layouter
   - tox -e $TOX_ENV
 
 #after_success:

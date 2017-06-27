@@ -3,7 +3,8 @@
 
 HELPER_SETTINGS = {
     'INSTALLED_APPS': [
-
+        'easy_thumbnails',
+        'filer',
     ],
     'ALLOWED_HOSTS': ['localhost'],
     'CMS_LANGUAGES': {
