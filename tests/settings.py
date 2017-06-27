@@ -18,7 +18,7 @@ HELPER_SETTINGS = {
 
 def run():
     from djangocms_helper import runner
-    runner.cms('layouter')
+    runner.cms('layouter', extra_args=['--migrate'])
 
 if __name__ == '__main__':
     run()
