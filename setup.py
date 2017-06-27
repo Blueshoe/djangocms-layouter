@@ -46,4 +46,5 @@ setup(
     classifiers=CLASSIFIERS,
     include_package_data=True,
     zip_safe=False,
+    test_suite='tests.settings.run',
 )
