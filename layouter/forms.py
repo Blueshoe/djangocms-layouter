@@ -27,9 +27,9 @@ class ButtonSelectWidget(RadioSelect):
 
 class DeviceIconCheckBoxWidget(CheckboxInput):
     ICON_MAPPING = {
-        'disable_on_mobile': '<i class="fa fa-mobile" aria-hidden="true"></i>',
-        'disable_on_tablet': '<i class="fa fa-tablet" aria-hidden="true"></i>',
-        'disable_on_desktop': '<i class="fa fa-desktop" aria-hidden="true"></i>',
+        'disable_on_mobile': '<i class="fa layouter-deviceIcon fa-mobile" aria-hidden="true"></i>',
+        'disable_on_tablet': '<i class="fa layouter-deviceIcon fa-tablet" aria-hidden="true"></i>',
+        'disable_on_desktop': '<i class="fa layouter-deviceIcon fa-desktop" aria-hidden="true"></i>',
     }
 
     def render(self, name, value, attrs=None):
