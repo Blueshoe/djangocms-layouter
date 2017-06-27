@@ -1,5 +1,5 @@
 import os
-from distutils.core import setup
+from setuptools import setup
 from layouter import __version__
 
 
