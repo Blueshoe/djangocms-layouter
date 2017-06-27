@@ -1,11 +1,7 @@
 language: python
 sudo: false
 
-# ToDo: Remove Comment, it's just for testing
-#branches: master  # This way push builds will only run on master branch. Does not affect PR builds.
-
-# ToDo: Caches?
-#cache: pip
+branches: master  # This way push builds will only run on master branch. Does not affect PR builds.
 
 env:
   - TOX_ENV=flake8
