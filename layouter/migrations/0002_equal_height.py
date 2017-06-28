@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='containerplugin',
             name='equal_height',
-            field=models.BooleanField(verbose_name='Align height of all columns in this row. Please note: This setting is not supported by Internet Explorer 9 and below.', default=False),
+            field=models.BooleanField(verbose_name='Align Content Height', default=False, help_text='Align height of all columns in this row. Please note: This setting is not  supported by Internet Explorer 9 and below.'),
         ),
     ]
