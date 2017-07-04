@@ -66,9 +66,9 @@ class ContainerPlugin(CMSPlugin):
     CSS_PARALLAX = 1
     TRUE_PARALLAX = 2
     BACKGROUND_IMAGE_PARALLAX_CHOICES = (
-        (NO_PARALLAX, _('No Effect')),
-        (CSS_PARALLAX, _('CSS Parallax')),
-        (TRUE_PARALLAX, _('True Parallax')),
+        (NO_PARALLAX, _('No effect')),
+        (CSS_PARALLAX, _('Static background image')),
+        (TRUE_PARALLAX, _('Parallax background image')),
     )
 
     container_type = models.IntegerField(choices=CONTAINER_TYPES, null=False, blank=False, default=TYPE_COLUMNS[0])
