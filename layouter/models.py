@@ -66,9 +66,10 @@ class ContainerPlugin(CMSPlugin):
 
     # To achieve same height columns we use the CSS3 flex box grid. For more information about it have a look at
     # http://caniuse.com/flexbox
-    equal_height = models.BooleanField(_('Align height of all columns in this row. Please note: This setting is not '
-                                         'supported by Internet Explorer 9 and below.'), null=False, blank=False,
-                                       default=False)
+    equal_height = models.BooleanField(verbose_name=_('Align Content Height'),
+                                       help_text=_('Align height of all columns in this row. Please note: '
+                                                   'This setting is not  supported by Internet Explorer 9 and below.'),
+                                       null=False, blank=False, default=False)
 
     css_classes = models.CharField(max_length=512, blank=True, null=True)
 
