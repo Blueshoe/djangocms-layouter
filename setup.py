@@ -1,5 +1,5 @@
 import os
-from distutils.core import setup
+from setuptools import setup
 from layouter import __version__
 
 
@@ -46,4 +46,5 @@ setup(
     classifiers=CLASSIFIERS,
     include_package_data=True,
     zip_safe=False,
+    test_suite='tests.settings.run',
 )
