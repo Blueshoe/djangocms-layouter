@@ -31,6 +31,10 @@
   border: 2px dashed #1F5E8E;
   margin-bottom: -4px;
 }
+.layouterRow--inner > * {
+    min-height: 0;
+    min-width: 0;
+}
 #id_container_type li {
   display: inline-block;
   width: 250px;
