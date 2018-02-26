@@ -1,0 +1,6 @@
+{% if wrap_label %}<label{% if widget.attrs.id %} for="{{ widget.attrs.id }}"{% endif %}>{% endif %}
+{% for column in widget.columns %}
+<span class="icon-admin {{ column }}"></span>
+{% endfor %}
+<br/>
+{% include "django/forms/widgets/input.html" %}{% if wrap_label %} {{ widget.label }}</label>{% endif %}
