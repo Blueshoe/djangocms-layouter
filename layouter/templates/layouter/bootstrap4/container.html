@@ -4,7 +4,7 @@
     <div class="offset-lg-{{ instance.margin }} col-lg-{{ width }}">
         <div class="row layouterRow--inner
         {% if request.session.layouter_grid %}show-grid{% endif %}
-        {% if instance.equal_height %}layouterRow--equalHeight{% endif %}
+        {% if not instance.equal_height %}align-items-start{% endif %}
         {{ instance.css_classes }}">
             {% include 'layouter/bootstrap4/partials/one_col.html' %}
             {% include 'layouter/bootstrap4/partials/two_cols.html' %}
