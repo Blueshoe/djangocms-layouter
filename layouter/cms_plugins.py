@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from cms.plugin_pool import plugin_pool
+from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 from cms.plugin_base import CMSPluginBase
 
@@ -31,7 +32,13 @@ class ContainerCMSPlugin(CMSPluginBase):
         return super(ContainerCMSPlugin, self).render(context, instance, placeholder)
 
     def get_render_template(self, context, instance, placeholder):
-        # ToDo: query settings, debug log if it's not present
+        try:
+            version = settings.LAYOUTER_BOOTSTRAP_VERSION
+        except AttributeError:
+            raise AttributeError('djangocms-layouter requires the following setting which is missing: '
+                                 'LAYOUTER_BOOTSTRAP_VERSION')
+        if int(version) == 3:
+            return 'layouter/bootstrap3/container.html'
         return 'layouter/bootstrap4/container.html'
 
 

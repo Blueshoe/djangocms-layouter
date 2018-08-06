@@ -1,7 +1,7 @@
 {% load sekizai_tags %}
 {% load staticfiles %}
 <div class="row layouterRow--outer">
-    <div class="col-md-offset-{{ instance.margin }} col-md-{{ width }}">
+    <div class="offset-lg-{{ instance.margin }} col-lg-{{ width }}">
         <div class="row layouterRow--inner
         {% if request.session.layouter_grid %}show-grid{% endif %}
         {% if instance.equal_height %}layouterRow--equalHeight{% endif %}
