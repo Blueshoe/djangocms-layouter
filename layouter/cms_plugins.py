@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
+import logging
+
 from cms.plugin_pool import plugin_pool
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
@@ -7,6 +10,9 @@ from cms.plugin_base import CMSPluginBase
 
 from layouter.forms import ContainerPluginForm
 from layouter.models import ContainerPlugin
+
+
+logger = logging.getLogger(__name__)
 
 
 class ContainerCMSPlugin(CMSPluginBase):
@@ -35,8 +41,11 @@ class ContainerCMSPlugin(CMSPluginBase):
         try:
             version = settings.LAYOUTER_BOOTSTRAP_VERSION
         except AttributeError:
-            raise AttributeError('djangocms-layouter requires the following setting which is missing: '
-                                 'LAYOUTER_BOOTSTRAP_VERSION')
+            logger.warn('You should define the following setting in order to prevent unexpected behavior with '
+                        'djangocms-layouter: "LAYOUTER_BOOTSTRAP_VERSION" [3,4]')
+            # Returning the bootstrap3 template in case the version is not explicitly set, to avoid migration issues.
+            return 'layouter/bootstrap3/container.html'
+
         if int(version) == 3:
             return 'layouter/bootstrap3/container.html'
         return 'layouter/bootstrap4/container.html'
