@@ -30,5 +30,9 @@ class ContainerCMSPlugin(CMSPluginBase):
         context['width'] = 12 - 2 * instance.margin
         return super(ContainerCMSPlugin, self).render(context, instance, placeholder)
 
+    def get_render_template(self, context, instance, placeholder):
+        # ToDo: query settings, debug log if it's not present
+        return 'layouter/bootstrap4/container.html'
+
 
 plugin_pool.register_plugin(ContainerCMSPlugin)

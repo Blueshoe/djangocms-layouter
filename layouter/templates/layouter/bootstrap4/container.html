@@ -6,10 +6,10 @@
         {% if request.session.layouter_grid %}show-grid{% endif %}
         {% if instance.equal_height %}layouterRow--equalHeight{% endif %}
         {{ instance.css_classes }}">
-            {% include 'layouter/partials/one_col.html' %}
-            {% include 'layouter/partials/two_cols.html' %}
-            {% include 'layouter/partials/three_cols.html' %}
-            {% include 'layouter/partials/four_cols.html' %}
+            {% include 'layouter/bootstrap4/partials/one_col.html' %}
+            {% include 'layouter/bootstrap4/partials/two_cols.html' %}
+            {% include 'layouter/bootstrap4/partials/three_cols.html' %}
+            {% include 'layouter/bootstrap4/partials/four_cols.html' %}
         </div>
     </div>
 </div>

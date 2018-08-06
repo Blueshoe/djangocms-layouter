@@ -1,0 +1,69 @@
+{% load cms_tags %}
+
+{% if instance.container_type == 6 %}
+    {% for plugin in instance.child_plugin_instances %}
+        <div class="col-md-4">
+            {% render_plugin plugin %}
+        </div>
+    {% endfor %}
+{% elif instance.container_type == 7 %}
+    {% for plugin in instance.child_plugin_instances %}
+        {% if forloop.first %}
+            <div class="col-md-3 col-sm-6">
+                {% render_plugin plugin %}
+            </div>
+        {% elif forloop.counter == 2 %}
+            <div class="col-md-3 col-sm-6">
+                {% render_plugin plugin %}
+            </div>
+        {% elif forloop.counter == 3 %}
+            <div class="col-md-6 col-sm-12">
+                {% render_plugin plugin %}
+            </div>
+        {% else %}
+            <div class="col-md-12">
+                {% render_plugin plugin %}
+            </div>
+        {% endif %}
+    {% endfor %}
+{% elif instance.container_type == 8 %}
+    {% for plugin in instance.child_plugin_instances %}
+        {% if forloop.first %}
+            <div class="col-md-3 col-sm-12">
+                {% render_plugin plugin %}
+            </div>
+        {% elif forloop.counter == 2 %}
+            <div class="col-md-6 col-sm-12">
+                {% render_plugin plugin %}
+            </div>
+        {% elif forloop.counter == 3 %}
+            <div class="col-md-3 col-sm-12">
+                {% render_plugin plugin %}
+            </div>
+        {% else %}
+            <div class="col-md-12">
+                {% render_plugin plugin %}
+            </div>
+        {% endif %}
+    {% endfor %}
+{% elif instance.container_type == 9 %}
+    {% for plugin in instance.child_plugin_instances %}
+        {% if forloop.first %}
+            <div class="col-md-6 col-sm-12">
+                {% render_plugin plugin %}
+            </div>
+        {% elif forloop.counter == 2 %}
+            <div class="col-md-3 col-sm-6">
+                {% render_plugin plugin %}
+            </div>
+        {% elif forloop.counter == 3 %}
+            <div class="col-md-3 col-sm-6">
+                {% render_plugin plugin %}
+            </div>
+        {% else %}
+            <div class="col-md-12">
+                {% render_plugin plugin %}
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
