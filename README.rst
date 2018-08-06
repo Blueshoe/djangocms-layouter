@@ -7,7 +7,7 @@ Django-CMS Layouter
     :alt: Code analysis status
 
 **Django-CMS Layouter** is a plugin for **Django CMS** which aims to provide a grid system for authors and editors
-with a high ease of use and comprehensibility. It is leveraging `Bootstrap 3 <http://getbootstrap.com/>`_ as it
+with a high ease of use and comprehensibility. It is leveraging `Bootstrap <http://getbootstrap.com/>`_ (version 3 and 4 supported). as it
 is a very popular framework to create responsive websites.
 
 .. image:: https://raw.githubusercontent.com/Blueshoe/djangocms-layouter/master/layouter.gif
@@ -15,7 +15,7 @@ is a very popular framework to create responsive websites.
 Documentation
 =============
 
-Please feel free to contribute and help us to improve **Django-CMS Layouter**. 
+Please feel free to contribute and help us to improve **Django-CMS Layouter**.
 
 Installation and Configuration
 ------------------------------
@@ -26,6 +26,7 @@ Installation and Configuration
 * Add ``layouter`` to ``INSTALLED_APPS``.
 * Add ``url(r'^layouter/', include('layouter.urls', namespace='layouter'), )`` to your url config
 * Run migrations: ``python manage.py migrate layouter``.
+* Set the setting ``LAYOUTER_BOOTSTRAP_VERSION`` to 3 or 4.
 * Done.
 
 Please note: Migrations are generated each release. If you checkout the current state of development
