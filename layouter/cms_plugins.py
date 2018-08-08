@@ -38,17 +38,7 @@ class ContainerCMSPlugin(CMSPluginBase):
         return super(ContainerCMSPlugin, self).render(context, instance, placeholder)
 
     def get_render_template(self, context, instance, placeholder):
-        try:
-            version = settings.LAYOUTER_BOOTSTRAP_VERSION
-        except AttributeError:
-            logger.warn('You should define the following setting in order to prevent unexpected behavior with '
-                        'djangocms-layouter: "LAYOUTER_BOOTSTRAP_VERSION" [3,4]')
-            # Returning the bootstrap3 template in case the version is not explicitly set, to avoid migration issues.
-            return 'layouter/bootstrap3/container.html'
-
-        if int(version) == 3:
-            return 'layouter/bootstrap3/container.html'
-        return 'layouter/bootstrap4/container.html'
-
+        version = getattr(settings, 'LAYOUTER_BOOTSTRAP_VERSION', 3)
+        return 'layouter/bootstrap{}/container.html'.format(version)
 
 plugin_pool.register_plugin(ContainerCMSPlugin)
