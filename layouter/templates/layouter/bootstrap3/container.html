@@ -1,0 +1,14 @@
+<div class="row layouterRow--outer">
+    <div class="col-md-offset-{{ instance.margin }} col-md-{{ width }}">
+        <div class="row layouterRow--inner
+        {% if request.session.layouter_grid %}show-grid{% endif %}
+        {% if instance.equal_height %}layouterRow--equalHeight{% endif %}
+        {{ instance.css_classes }}">
+            {% include 'layouter/bootstrap3/partials/one_col.html' %}
+            {% include 'layouter/bootstrap3/partials/two_cols.html' %}
+            {% include 'layouter/bootstrap3/partials/three_cols.html' %}
+            {% include 'layouter/bootstrap3/partials/four_cols.html' %}
+        </div>
+    </div>
+</div>
+{% include "layouter/partials/layouter_javascript.html" %}

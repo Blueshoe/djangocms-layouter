@@ -1,0 +1,15 @@
+{% load sekizai_tags staticfiles %}
+
+{# The following JavaScript and Styles are only needed in editing mode. #}
+{% if request.toolbar.edit_mode %}
+    {% csrf_token %}
+    {% addtoblock 'css' %}
+        <link rel="stylesheet" href="{% static 'layouter/css/layouter.css' %}">
+    {% endaddtoblock %}
+    {% addtoblock 'js' %}
+        <script>
+            var toggleGridURL = '{% url 'layouter:toggle-grid' %}';
+        </script>
+        <script src="{% static 'layouter/js/layouter.js' %}" defer></script>
+    {% endaddtoblock %}
+{% endif %}
