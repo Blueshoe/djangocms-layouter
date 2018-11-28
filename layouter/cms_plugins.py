@@ -27,8 +27,8 @@ class ContainerCMSPlugin(CMSPluginBase):
         (None, {
             'fields': ('container_type', 'margin', 'equal_height')
         }),
-        (None, {
-           'description': _('Disable row on'),
+        (_('Visibility'), {
+           'description': _('Hide the row on given breakpoints: 480px (Mobile), 1200px (Tablet), 1200px (Desktop)'),
            'fields': ('disable_on_mobile', 'disable_on_tablet', 'disable_on_desktop')
         }),
         (_('Advanced'), {
