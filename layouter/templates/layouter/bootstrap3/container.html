@@ -1,4 +1,7 @@
-<div class="row layouterRow--outer">
+<div class="row layouterRow--outer
+    {% if instance.disable_on_mobile %} layouterRow-disableMobile {% endif %}
+    {% if instance.disable_on_tablet %} layouterRow-disableTablet {% endif %}
+    {% if instance.disable_on_desktop %} layouterRow-disableDesktop {% endif %}">
     <div class="col-md-offset-{{ instance.margin }} col-md-{{ width }}">
         <div class="row layouterRow--inner
         {% if request.session.layouter_grid %}show-grid{% endif %}

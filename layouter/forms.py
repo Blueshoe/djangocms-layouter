@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 from django import forms
-from django.forms.utils import flatatt
-from django.forms.widgets import RadioSelect, ChoiceInput, RadioFieldRenderer, CheckboxInput
+from django.forms.widgets import RadioSelect, CheckboxInput
 from layouter.models import ContainerPlugin
-from django.utils.encoding import force_text
-from django.utils.html import format_html
 from django.utils.safestring import mark_safe
 
 
