@@ -1,0 +1,25 @@
+{% load sekizai_tags staticfiles %}
+
+{% addtoblock 'css' %}
+    <link rel="stylesheet" href="{% static 'layouter/css/layouter.css' %}">
+
+    {% if instance.bootstrap_version == 3 %}
+        <link rel="stylesheet" href="{% static 'layouter/css/layouter-bootstrap3-specific.css' %}">
+    {% elif instance.bootstrap_version == 4 %}
+        <link rel="stylesheet" href="{% static 'layouter/css/layouter-bootstrap4-specific.css' %}">
+    {% endif %}
+{% endaddtoblock %}
+
+{# The following JavaScript and CSS is only needed in editing mode #}
+{% if request.toolbar.edit_mode %}
+    {% csrf_token %}
+    {% addtoblock 'css' %}
+        <link rel="stylesheet" href="{% static 'layouter/css/layouter-editor.css' %}">
+    {% endaddtoblock %}
+    {% addtoblock 'js' %}
+        <script>
+            var toggleGridURL = '{% url 'layouter:toggle-grid' %}';
+        </script>
+        <script src="{% static 'layouter/js/layouter.js' %}" defer></script>
+    {% endaddtoblock %}
+{% endif %}
