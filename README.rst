@@ -32,6 +32,15 @@ Installation and Configuration
 Please note: Migrations are generated each release. If you checkout the current state of development
 migrations might be missing.
 
+**Static files**
+
+The required CSS and JavaScript files are added to the sekizai blocks ``css`` and ``js``. If you don't use these blocks, you need to manually add the static files:
+
+- ``layouter/css/layouter.css``
+- ``layouter/js/layouter.js``
+
+Both are only required when the toolbar is in ``edit_mode``.
+
 Features
 --------
 
