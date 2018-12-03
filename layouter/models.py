@@ -83,7 +83,7 @@ class ContainerPlugin(CMSPlugin):
                                                     choices=BACKGROUND_IMAGE_PARALLAX_CHOICES, default=NO_PARALLAX)
 
     background_image_width = models.IntegerField(_('Background image width'), null=True, blank=True, default=1920)
-    background_image_height = models.IntegerField(_('Background image width'), null=True, blank=True, default=1080,
+    background_image_height = models.IntegerField(_('Background image height'), null=True, blank=True, default=1080,
                                                   help_text=_('It is recommended to limit the size of the background '
                                                               'image to a reasonable number in order to reduce page '
                                                               'loading times.'))

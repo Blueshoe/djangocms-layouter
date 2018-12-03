@@ -23,3 +23,14 @@
         <script src="{% static 'layouter/js/layouter.js' %}" defer></script>
     {% endaddtoblock %}
 {% endif %}
+
+{#  Parallax JavaScript #}
+{% if instance.background_image_parallax == instance.TRUE_PARALLAX %}
+    {% addtoblock 'js' %}
+        {# https://pixelcog.github.io/parallax.js/ #}
+        <script src="{% static 'layouter/js/parallax.min.js' %}"></script>
+        <script>
+            $('.js-layouterRow--parallax').parallax();
+        </script>
+    {% endaddtoblock %}
+{% endif %}

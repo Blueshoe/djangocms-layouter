@@ -41,6 +41,7 @@ class ContainerCMSPlugin(CMSPluginBase):
             'fields': ('container_type', 'margin', 'equal_height')
         }),
         (_('Visibility'), {
+            'classes': ('collapse',),
             'description': get_visibility_breakpoint_description(),
             'fields': ('disable_on_mobile', 'disable_on_tablet', 'disable_on_desktop')
         }),
