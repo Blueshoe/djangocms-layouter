@@ -3,7 +3,23 @@
         <div class="row layouterRow--inner
         {% if request.session.layouter_grid %}show-grid{% endif %}
         {% if instance.equal_height %}layouterRow--equalHeight{% endif %}
-        {{ instance.css_classes }}">
+
+        {% if instance.background_image_parallax == instance.CSS_PARALLAX %}layouterRow--parallax{% endif %}
+        {% if instance.background_image_parallax == instance.TRUE_PARALLAX %}js-layouterRow--parallax{% endif %}
+
+        {{ instance.css_classes }}"
+
+        {% if instance.background_image %}
+            {% if instance.background_image_parallax == instance.TRUE_PARALLAX %}
+                {# Setup True / JS Parallax via parallax.js #}
+                 data-parallax="scroll" data-image-src="{{ instance.get_resized_background_image.url }}"
+                 data-naturalWidth="{{ instance.get_resized_background_image.width }}"
+                 data-naturalHeigth="{{ instance.get_resized_background_image.height }}"
+            {% else %}
+                {# CSS_PARALLAX also uses the background image #}
+                style="background-image: url('{{ instance.get_resized_background_image.url }}')"
+            {% endif %}
+        {% endif %}">
             {% include 'layouter/bootstrap3/partials/one_col.html' %}
             {% include 'layouter/bootstrap3/partials/two_cols.html' %}
             {% include 'layouter/bootstrap3/partials/three_cols.html' %}
