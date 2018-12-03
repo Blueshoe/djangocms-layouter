@@ -1,0 +1,88 @@
+/*
+ * This CSS is only included when the CMS toolbar is in edit_mode or if the plugin form is opened.
+ */
+
+/*!
+ *  Stripped down CSS for only containing the rules we need.
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+@font-face{font-family:'FontAwesome';src:url('../fonts/fontawesome-webfont.eot?v=4.7.0');src:url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.fa-mobile:before{content:"\f10b"}.fa-desktop:before{content:"\f108"}.fa-tablet:before{content:"\f10a"}
+
+@font-face {
+  font-family: 'layouter';
+  src:  url('../fonts/layouter.eot?42hzee');
+  src:  url('../fonts/layouter.eot?42hzee#iefix') format('embedded-opentype'),
+    url('../fonts/layouter.ttf?42hzee') format('truetype'),
+    url('../fonts/layouter.woff?42hzee') format('woff'),
+    url('../fonts/layouter.svg?42hzee#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'layouter' !important;
+  speak: none;
+    font-size: 1.5em;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+    vertical-align: middle;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.layouterRow--outer + .layouter-row--outer {
+  margin-top: 2px;
+}
+.layouterRow--inner.show-grid [class^=col-] {
+  border: 2px dashed #1F5E8E;
+  margin-bottom: -4px;
+}
+#id_container_type li {
+  display: inline-block;
+  width: 250px;
+  text-align: center;
+  border: 0;
+  padding-bottom: 15px;
+  user-select: none;
+}
+#id_container_type li span {
+  padding-bottom: 7px;
+  display: inline-block;
+}
+#id_container_type li.checked {
+  border: 1px solid black;
+  margin-bottom: -1px;
+  margin-right: -1px;
+  margin-left: -1px;
+  margin-top: -1px;
+}
+#id_container_type input[type=radio] {
+  display: none;
+}
+.quarter:before {
+  content: "\e900";
+}
+.third:before {
+  content: "\e901";
+}
+.half:before {
+  content: "\e903";
+}
+.two-third:before {
+  content: "\e904";
+}
+.three-quarter:before {
+  content: "\e905";
+}
+.full-width:before {
+  content: "\e906";
+}
+.layouter-deviceIcon {
+    width: 15px;
+    text-align: center;
+}

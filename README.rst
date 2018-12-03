@@ -34,12 +34,11 @@ migrations might be missing.
 
 **Static files**
 
-The required CSS and JavaScript files are added to the sekizai blocks ``css`` and ``js``. If you don't use these blocks, you need to manually add the static files:
+The required CSS and JavaScript files are added to the sekizai blocks ``css`` and ``js`` - make sure to have those two blocks.
 
-- ``layouter/css/layouter.css``
-- ``layouter/js/layouter.js``
+We only load files when they're really needed, so eg. editor-related CSS is only loaded when the toolbar is in ``edit_mode``.
 
-Both are only required when the toolbar is in ``edit_mode``.
+If you don't use the mentioned sekizai blocks and don't want to add them, please take a look at ``layouter/templates/partials/layouter_css_and_javascript.html`` on how to load the needed static files.
 
 Features
 --------

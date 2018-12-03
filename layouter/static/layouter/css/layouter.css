@@ -1,31 +1,12 @@
-@font-face {
-  font-family: 'layouter';
-  src:  url('../fonts/layouter.eot?42hzee');
-  src:  url('../fonts/layouter.eot?42hzee#iefix') format('embedded-opentype'),
-    url('../fonts/layouter.ttf?42hzee') format('truetype'),
-    url('../fonts/layouter.woff?42hzee') format('woff'),
-    url('../fonts/layouter.svg?42hzee#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
+/*
+ * This file also get included on the published version of a page (not only when the toolbar is in edit mode)
+ */
 
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'layouter' !important;
-  speak: none;
-    font-size: 1.5em;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-    vertical-align: middle;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.layouterRow--outer + .layouter-row--outer {
-  margin-top: 2px;
+.layouterRow--equalHeight {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 .layouterRow--inner {
   background-size: cover;
@@ -34,54 +15,4 @@
 .layouterRow--parallax {
   background-attachment: fixed;
   background-position: center;
-}
-.layouterRow--inner.show-grid [class^=col-] {
-  border: 2px dashed #1F5E8E;
-  margin-bottom: -4px;
-}
-#id_container_type li {
-  display: inline-block;
-  width: 250px;
-  text-align: center;
-  border: 0;
-  padding-bottom: 15px;
-  user-select: none;
-}
-#id_container_type li span {
-  padding-bottom: 7px;
-  display: inline-block;
-}
-#id_container_type li.checked {
-  border: 1px solid black;
-  margin-bottom: -1px;
-  margin-right: -1px;
-  margin-left: -1px;
-  margin-top: -1px;
-}
-#id_container_type input[type=radio] {
-  display: none;
-}
-.quarter:before {
-  content: "\e900";
-}
-.third:before {
-  content: "\e901";
-}
-.half:before {
-  content: "\e903";
-}
-.two-third:before {
-  content: "\e904";
-}
-.three-quarter:before {
-  content: "\e905";
-}
-.full-width:before {
-  content: "\e906";
-}
-.layouterRow--equalHeight {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }

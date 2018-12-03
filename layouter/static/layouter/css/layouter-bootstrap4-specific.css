@@ -1,0 +1,10 @@
+/* Based on https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints */
+@media only screen and (max-width: 575.98px) {
+  .layouterRow-disableMobile { display: none; }
+}
+@media only screen and (min-width: 576px) and (max-width: 1199.98px) {
+  .layouterRow-disableTablet { display: none; }
+}
+@media only screen and (min-width: 1200px) {
+  .layouterRow-disableDesktop { display: none; }
+}
