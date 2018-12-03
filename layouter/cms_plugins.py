@@ -36,26 +36,41 @@ class ContainerCMSPlugin(CMSPluginBase):
     form = ContainerPluginForm
     change_form_template = 'layouter/change_form.html'
 
-    fieldsets = (
-        (None, {
-            'fields': ('container_type', 'margin', 'equal_height')
-        }),
-        (_('Visibility'), {
-            'classes': ('collapse',),
-            'description': get_visibility_breakpoint_description(),
-            'fields': ('disable_on_mobile', 'disable_on_tablet', 'disable_on_desktop')
-        }),
-        (_('Background'), {
-            'classes': ('collapse',),
-            'fields': (
-                'background_image', 'background_image_parallax', 'background_image_width', 'background_image_height'
-            )
-        }),
-        (_('Advanced'), {
-            'classes': ('collapse',),
-            'fields': ('css_classes',)
-        })
-    )
+    def get_fieldsets(self, request, obj=None):
+        basic = (None, {
+                'fields': ('container_type', 'margin', 'equal_height')
+            })
+
+        visibility = (_('Visibility'), {
+                'classes': ('collapse',),
+                'description': get_visibility_breakpoint_description(),
+                'fields': ('disable_on_mobile', 'disable_on_tablet', 'disable_on_desktop')
+            })
+
+        background = (_('Background'), {
+                'classes': ('collapse',),
+                'fields': (
+                    'background_image', 'background_image_parallax', 'background_image_width', 'background_image_height'
+                )
+            })
+
+        advanced = (_('Advanced'), {
+                'classes': ('collapse',),
+                'fields': ('css_classes',)
+            })
+
+        mapping = {
+            'basic': basic,
+            'visibility': visibility,
+            'background': background,
+            'advanced': advanced,
+        }
+
+        all_fieldsets = settings.LAYOUTER_FIELDSETS or ['basic', 'visibility', 'background', 'advanced']
+        return [
+            mapping[fieldset]
+            for fieldset in all_fieldsets
+        ]
 
     def render(self, context, instance, placeholder):
         context['width'] = 12 - 2 * instance.margin
