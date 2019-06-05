@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
+from django.conf import settings
 from django.db import models
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
@@ -71,11 +73,19 @@ class ContainerPlugin(CMSPlugin):
                                                    'This setting is not  supported by Internet Explorer 9 and below.'),
                                        null=False, blank=False, default=False)
 
+    disable_on_mobile = models.BooleanField(_('Disable on mobile'), null=False, blank=False, default=False)
+    disable_on_tablet = models.BooleanField(_('Disable on tablet'), null=False, blank=False, default=False)
+    disable_on_desktop = models.BooleanField(_('Disable on desktop'), null=False, blank=False, default=False)
+
     css_classes = models.CharField(max_length=512, blank=True, null=True)
 
     @property
     def max_children(self):
         return len(self.TYPE_COLUMNS[self.container_type])
+
+    @property
+    def bootstrap_version(self):
+        return getattr(settings, 'LAYOUTER_BOOTSTRAP_VERSION', 3)
 
     def __str__(self):
         name = self.CONTAINER_TYPES[self.container_type][1]

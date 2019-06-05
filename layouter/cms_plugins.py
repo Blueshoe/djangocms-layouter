@@ -15,6 +15,19 @@ from layouter.models import ContainerPlugin
 logger = logging.getLogger(__name__)
 
 
+def get_visibility_breakpoint_description():
+    """ Returns the description of the visibility section
+    It makes sure that it uses the correct breakpoints, depending on which bootstrap version is used."""
+    bootstrap_3_breakpoints = (480, 1200, 1200)
+    bootstrap_4_breakpoints = (576, 1200, 1200)
+    breakpoints = bootstrap_3_breakpoints \
+        if getattr(settings, 'LAYOUTER_BOOTSTRAP_VERSION', 3) == 3 \
+        else bootstrap_4_breakpoints
+    return _('Hide the row on certain breakpoints: <{}px (Mobile), <{}px (Tablet), >{}px (Desktop)').format(
+        *breakpoints
+    )
+
+
 class ContainerCMSPlugin(CMSPluginBase):
     render_template = 'layouter/container.html'
     name = _('Layouting Row')
@@ -26,6 +39,10 @@ class ContainerCMSPlugin(CMSPluginBase):
     fieldsets = (
         (None, {
             'fields': ('container_type', 'margin', 'equal_height')
+        }),
+        (_('Visibility'), {
+           'description': get_visibility_breakpoint_description(),
+           'fields': ('disable_on_mobile', 'disable_on_tablet', 'disable_on_desktop')
         }),
         (_('Advanced'), {
             'classes': ('collapse',),
