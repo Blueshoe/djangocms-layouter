@@ -27,6 +27,14 @@
 .layouterRow--outer + .layouter-row--outer {
   margin-top: 2px;
 }
+.layouterRow--inner {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.layouterRow--parallax {
+  background-attachment: fixed;
+  background-position: center;
+}
 .layouterRow--inner.show-grid [class^=col-] {
   border: 2px dashed #1F5E8E;
   margin-bottom: -4px;
