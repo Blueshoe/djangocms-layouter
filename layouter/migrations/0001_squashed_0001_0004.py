@@ -10,8 +10,6 @@ import filer.fields.image
 
 class Migration(migrations.Migration):
 
-    replaces = [('layouter', '0001_initial'), ('layouter', '0002_equal_height'), ('layouter', '0003_auto_20190129_1002'), ('layouter', '0004_background_options')]
-
     initial = True
 
     dependencies = [
