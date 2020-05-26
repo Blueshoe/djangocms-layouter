@@ -76,7 +76,12 @@ class ContainerPlugin(CMSPlugin):
     margin = models.IntegerField(choices=MARGIN_TYPES, null=False, blank=False, default=MARGIN_TYPES[0][0],
                                  help_text=_('How much margin is needed on the left and right side?'))
 
-    background_image = FilerImageField(verbose_name=_('Background image'), null=True, blank=True)
+    background_image = FilerImageField(
+        verbose_name=_('Background image'),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL
+    )
 
     background_image_parallax = models.IntegerField(_('Parallax Effect'), null=False, blank=False,
                                                     choices=BACKGROUND_IMAGE_PARALLAX_CHOICES, default=NO_PARALLAX)

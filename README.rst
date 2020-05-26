@@ -52,6 +52,12 @@ These are the core features of **Django-CMS Layouter**:
 * Optional equal height for columns (uses CSS3 flexbox)
 * Toggle grid - show and hide grid in content mode
 
+Migrating to Django>=2
+----------------------
+
+There is not much you need to do. Just run update and ``python manage.py migrate``.
+
+
 ToDo's
 ------
 
