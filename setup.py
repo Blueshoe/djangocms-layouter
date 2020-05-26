@@ -8,14 +8,11 @@ def read(fname):
 
 
 CLASSIFIERS = [
-    'Development Status :: 4 - Beta',
     'Framework :: Django',
     'Environment :: Web Environment',
     'Intended Audience :: Developers',
     'Operating System :: OS Independent',
     'Programming Language :: Python',
-    'Programming Language :: Python :: 2',
-    'Programming Language :: Python :: 2.7',
     'Programming Language :: Python :: 3',
     'Programming Language :: Python :: 3.4',
     'Programming Language :: Python :: 3.5',
@@ -29,7 +26,7 @@ CLASSIFIERS = [
 
 REQUIREMENTS = [
     'django>=2,<3',
-    'django-cms>=3.4.0',
+    'django-cms>=3.5.0',
     'easy-thumbnails>=2.1 ',
 ]
 

@@ -55,8 +55,7 @@ These are the core features of **Django-CMS Layouter**:
 Migrating to Django>=2
 ----------------------
 
-Make sure to update the layouter the version ``0.3.3``. Run ``python manage.py migrate``. That release contains
-the old and the squashed migrations. After that update to ``>=1.0.0``.
+There is not much you need to do. Just run update and ``python manage.py migrate``.
 
 
 ToDo's

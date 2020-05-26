@@ -11,7 +11,7 @@ import filer.fields.image
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('layouter', '0002_cms_ptr_compatibility_fix'),
+        ('layouter', '0004_background_options'),
     ]
 
     operations = [
