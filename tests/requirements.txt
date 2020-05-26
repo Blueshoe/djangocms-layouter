@@ -2,6 +2,6 @@
 django-filer>=1.2.4
 easy-thumbnails
 # other requirements
-djangocms-helper>=0.9.2,<0.10
+djangocms-helper
 tox
 coverage
