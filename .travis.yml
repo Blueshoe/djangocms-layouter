@@ -28,6 +28,11 @@ env:
   - TOX_ENV=py37-dj22-cms35
   - TOX_ENV=py37-dj22-cms36
   - TOX_ENV=py37-dj22-cms37
+  # Django 3.1
+  - TOX_ENV=py37-dj31-cms37
+  - TOX_ENV=py37-dj31-cms38
+  - TOX_ENV=py38-dj31-cms37
+  - TOX_ENV=py38-dj31-cms38
 
 install:
   - pip install tox coverage
