@@ -5,12 +5,11 @@ from django.db import models
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 from cms.models.pluginmodel import CMSPlugin
-from django.utils.encoding import python_2_unicode_compatible, force_text
+from django.utils.encoding import force_text
 from easy_thumbnails.files import get_thumbnailer
 from filer.fields.image import FilerImageField
 
 
-@python_2_unicode_compatible
 class ContainerPlugin(CMSPlugin):
 
     FULL_WIDTH = 100
