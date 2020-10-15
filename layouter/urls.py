@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-from django.conf.urls import url
+from django.urls import re_path
 
 from layouter.views import ToggleGridView
 
+
+app_name = 'layouter'
+
+
 urlpatterns = [
-    url(r'^toggle-grid/', ToggleGridView.as_view(), name='toggle-grid')
+    re_path(r'^toggle-grid/', ToggleGridView.as_view(), name='toggle-grid')
 ]
