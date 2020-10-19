@@ -40,7 +40,7 @@ setup(
     author='Robert Stein',
     author_email='robert@blueshoe.de',
     url='https://github.com/Blueshoe/djangocms-layouter',
-    download_url='https://github.com/Blueshoe/djangocms-layouter/archive/0.1.5.zip',
+    download_url='https://github.com/Blueshoe/djangocms-layouter/archive/0.1.6.zip',
     install_requires=REQUIREMENTS,
     keywords=['django', 'Django CMS', 'grid', 'bootstrap', 'website', 'CMS', 'Blueshoe'],
     classifiers=CLASSIFIERS,
