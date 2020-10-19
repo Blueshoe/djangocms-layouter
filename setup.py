@@ -32,7 +32,7 @@ REQUIREMENTS = [
 
 setup(
     name='djangocms-layouter',
-    packages=['layouter'],
+    packages=['layouter', 'layouter.migrations'],
     version=__version__,
     description='Grid system for Django-CMS users which aims for ease of use.',
     long_description=read('README.rst'),
