@@ -25,7 +25,7 @@ CLASSIFIERS = [
 ]
 
 REQUIREMENTS = [
-    'django>=2,<3',
+    'django>=3,<4',
     'django-cms>=3.5.0',
     'easy-thumbnails>=2.1 ',
 ]
